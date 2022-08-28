@@ -1,6 +1,6 @@
 from cProfile import label
 from django import forms
-from .models import Booking
+from .models import Booking,Contact
 
 
 class DateInput(forms.DateInput):
@@ -29,6 +29,21 @@ class BookingForm(forms.ModelForm):
             'booking_date':"Booking Date: ",
         }
 
+
+
+class ContactUs(forms.ModelForm):
+
+
+    class Meta:
+        model = Contact
+        fields = '__all__'
+
+        labels = {
+
+            'name':"Your name",
+            'email':"Your email",
+            'message':"Your message",
+        }
 
 
 

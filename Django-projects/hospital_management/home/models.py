@@ -1,4 +1,5 @@
 from distutils.command.upload import upload
+import email
 from django.db import models
 
 # Create your models here.
@@ -27,3 +28,9 @@ class Booking(models.Model):
     doc_name = models.ForeignKey(Doctors, on_delete=models.CASCADE)
     booking_date =models.DateField()
     booked_on = models.DateField(auto_now=True)
+
+
+class Contact(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    message = models.TextField()
